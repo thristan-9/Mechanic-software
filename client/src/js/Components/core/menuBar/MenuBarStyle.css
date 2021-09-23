@@ -1,0 +1,41 @@
+
+.menuBar{
+    padding-top: 9px;
+    display: block;
+    justify-content: center;
+    width: 60px;
+    height: 100vh;
+    /* box-shadow: 0 0 1rem 0 rgba(0, 0, 0, 0.5);  */
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+    border-right: 1px solid rgba( 255, 255, 255, 0.18 );
+}
+
+.option{
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+}
+
+.blur{
+    background: rgba( 255, 255, 255, 0.10 );
+    backdrop-filter: blur( 30px );
+}
+
+@media only screen and (max-width: 850px) {
+    .menuBar{
+        width: 100vw;
+        height: 50px;
+        display: flex;
+        padding-top: 0px;
+        border-top: 1px solid rgba( 255, 255, 255, 0.18 );
+        border-right: none;
+    }
+
+    .option{
+        margin-bottom: 0px;
+        margin-right: 10px;
+    }
+
+}
