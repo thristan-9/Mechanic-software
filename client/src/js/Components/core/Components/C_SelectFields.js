@@ -41,8 +41,8 @@ export function C_SelectField(props){
 
 export function C_SelectVehicle(props){
     
-    const vehicleOptions = [{ value: "Carro" }, { value: "Moto" }/*, { value:"Bicicleta"}*/];
-    const [vehicle, setVehicle] = useState("Carro");
+    const vehicleOptions = [{ value: "Car" }, { value: "Motorcycle" }, { value:"Bicycle"}];
+    const [vehicle, setVehicle] = useState("Car");
     
 
     var style = props.style ? props.style : {};
@@ -55,22 +55,22 @@ export function C_SelectVehicle(props){
 
     return (
         <div style={{display:"flex",alignItems:"center"}}>
-            {vehicle == "Carro" ?
+            {vehicle == "Car" ?
                 <Icon style={{ marginRight: 7 }} color={props.color ? props.color : "primary"}>
                     <FaCarSide/> 
                 </Icon>
             :
                 <Icon style={{ marginRight: 7 }} color={props.color ? props.color : "primary"}>
-                    {vehicle == "Moto" ? "two_wheeler" : "pedal_bike"}
+                    {vehicle == "Motorcycle" ? "two_wheeler" : "pedal_bike"}
                 </Icon>
             }
           
             <FormControl style={style} variant="outlined">
-                <InputLabel>Veiculo</InputLabel>
+                <InputLabel>Vehicle</InputLabel>
                 <Select
                     value={vehicle}
                     onChange={onChange}
-                    label={"Veiculo"}
+                    label={"Vehicle"}
                 >
                     {vehicleOptions.map((item, k) => {
                         return (
@@ -89,7 +89,7 @@ export function C_SelectVehicle(props){
 
 export function C_SelectVehicleBrand(props){
     
-    const brandOptions = [{ value: "Audi" }, { value: "Bmw" }, { value: "Chevrolet" }, { value: "Outra" }];
+    const brandOptions = [{ value: "Audi" }, { value: "Bmw" }, { value: "Chevrolet" }, { value: "Other" }];
     const [brand, setBrand] = useState("Audi");
 
     var style = props.style ? props.style : {};
@@ -112,11 +112,11 @@ export function C_SelectVehicleBrand(props){
             <Icon style={{ marginRight: 7 }} color={props.color ? props.color : "primary"}>{"public"}</Icon>
 
             <FormControl style={style} variant="outlined">
-                <InputLabel>Marca</InputLabel>
+                <InputLabel>Brand</InputLabel>
                 <Select
                     value={brand}
                     onChange={onChange}
-                    label={"Marca"}
+                    label={"Brand"}
                 >
                     {brandOptions.map((item, k) => {
                         return (

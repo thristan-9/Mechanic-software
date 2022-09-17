@@ -52,7 +52,7 @@ export function C_TextFieldObs(props) {
 
             <TextField
                 variant={props.variant ? props.variant : "outlined"}
-                label={"Observação"}
+                label={"Observation"}
                 placeholder={props.placeholder}
                 value={props.value}
                 style={style}
@@ -124,7 +124,7 @@ export function C_TextFieldKilometragem(props) {
 
             <TextField
                 variant={props.variant ? props.variant : "outlined"}
-                label={"Kilometragem"}
+                label={"Mileage"}
                 placeholder={props.placeholder}
                 value={props.value}
                 style={style}
@@ -204,7 +204,7 @@ export function C_TextFieldMobile(props) {
 
             <TextField
                 variant={props.variant ? props.variant : "outlined"}
-                label={"Celular"}
+                label={"Phone Number"}
                 placeholder={props.placeholder}
                 value={helper.displayMobile(props.value)}
                 style={style}

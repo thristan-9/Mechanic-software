@@ -42,7 +42,7 @@ export function C_Modal(props) {
                             :undefined}
 
                             <div style={{display: "flex", alignItems: "center", width: "100%", justifyContent: "flex-end"}}>
-                                <C_Button variant="outlined" onClick={cancelModal} label={props.onCancelLabel ? props.onCancelLabel : "Cancelar"} />
+                                <C_Button variant="outlined" onClick={cancelModal} label={props.onCancelLabel ? props.onCancelLabel : "Cancel"} />
                                 <C_Button style={{ marginLeft: 10 }} onClick={props.onOk} label={props.onOkLabel ? props.onOkLabel : "Ok"} />
                             </div>
                         </div>

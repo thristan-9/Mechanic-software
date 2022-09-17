@@ -95,53 +95,48 @@ export function Clients(props) {
             Notes: vehicleObs,
         };
 
-        helper.Post("/api/client/create", { ClientData: ClientData, VehicleData: vehicleModel ? VehicleData : undefined }, false, (err, ret) => {
-            setShowModalClient(false);
+        // helper.Post("/api/client/create", { ClientData: ClientData, VehicleData: vehicleModel ? VehicleData : undefined }, false, (err, ret) => {
+        setShowModalClient(false);
 
-            setClientName(undefined)
-            setClientDocumentId(undefined)
-            setClientPhoneNumber(undefined)
-            setClientEmail(undefined)
-            setClientObs(undefined)
+        setClientName(undefined)
+        setClientDocumentId(undefined)
+        setClientPhoneNumber(undefined)
+        setClientEmail(undefined)
+        setClientObs(undefined)
 
-            setVehicleType("Carro")
-            setVehicleBrand("Audi")
-            setVehicleModel(undefined)
-            setVehicleDate(new Date())
-            setVehicleLicensePlate(undefined)
-            setVehicleKilometragem(undefined)
-            setVehicleObs(undefined)
-            setShowCarFields(undefined)
-        });
+        setVehicleType("Carro")
+        setVehicleBrand("Audi")
+        setVehicleModel(undefined)
+        setVehicleDate(new Date())
+        setVehicleLicensePlate(undefined)
+        setVehicleKilometragem(undefined)
+        setVehicleObs(undefined)
+        setShowCarFields(undefined)
+        // });
     }
-
-    function searchClient(){
-
-    }
-
 
     return (
         <div className={classes.page}>
             <div className="fade-in">
                 
                 <div className={classes.topDiv}>
-                    <p className={classes.tittle}>Clientes</p>
-                    <C_Button onClick={() => setShowModalClient(true)} icon="person_add" label="Cadastrar" />
+                    <p className={classes.tittle}>Clients</p>
+                    <C_Button onClick={() => setShowModalClient(true)} icon="person_add" label="Register" />
                 </div>
 
                 <div style={{display: "flex", alignItems: "center", margin: 10}}>
-                    <C_TextField value={clientSearch} onChange={(e) => setClientSearch(e.target.value)} style={{ width: 250 }} label="Pesquizar Cliente"/>
-                    <C_Icon onClick={searchClient} icon="search"/>
+                    <C_TextField value={clientSearch} onChange={(e) => setClientSearch(e.target.value)} style={{ width: 250 }} label="Search Client"/>
+                    <C_Icon icon="search"/>
                 </div>
 
-                <C_Modal onOkLabel={showCarFields ? "Cadastrar" : "Proximo"} onOk={verifyOnOk} onCancel={() => { setShowModalClient(false); setShowCarFields(false); setErrorClientName(false)}} backProperty={showCarFields} onBack={() => setShowCarFields(false)} tittle={showCarFields ? "Dados do Automovel" : "Dados do Cliente"} show={showModalClient}>
+                <C_Modal onOkLabel={showCarFields ? "Register" : "Next"} onOk={verifyOnOk} onCancel={() => { setShowModalClient(false); setShowCarFields(false); setErrorClientName(false)}} backProperty={showCarFields} onBack={() => setShowCarFields(false)} tittle={showCarFields ? "Vehicle Info" : "Client Info"} show={showModalClient}>
 
                     {!showCarFields ? 
                         <div className="fade-in">
                         
                             <div className={classes.wrapFields} style={{ display: props.device == "MOBILE" ? "block" : "flex" }}>
                                 <div style={{ width: props.device == "MOBILE" ? "100%" : "59%", marginRight: props.device == "MOBILE" ? undefined : "2%", marginBottom: props.device == "MOBILE" ? "20px" : undefined }}>
-                                    <C_TextField error={errorClientName} required={true} value={clientName} onChange={(e) => setClientName(e.target.value)} autoFocus={true} style={{ width: "100%" }} label="Nome Completo" icon="person" />
+                                    <C_TextField error={errorClientName} required={true} value={clientName} onChange={(e) => setClientName(e.target.value)} autoFocus={true} style={{ width: "100%" }} label="Full Name" icon="person" />
                                 </div>
                                 <div style={{ width: props.device == "MOBILE" ? "100%" : "39%" }}>
                                     <C_TextFieldCpf value={clientDocumentId} onChange={(e) => setClientDocumentId(e.target.value)} style={{ width: "100%" }} />
@@ -177,17 +172,17 @@ export function Clients(props) {
 
                             <div className={classes.wrapFields} style={{ display: props.device == "MOBILE" ? "block" : "flex" }}>
                                 <div style={{ width: props.device == "MOBILE" ? "100%" : "49%", marginRight: props.device == "MOBILE" ? undefined : "2%", marginBottom: props.device == "MOBILE" ? "20px" : undefined }}>
-                                    <C_TextField required={true} value={vehicleModel} onChange={(e) => setVehicleModel(e.target.value)} style={{ width: "100%" }} icon="commute" label="Modelo" />
+                                    <C_TextField required={true} value={vehicleModel} onChange={(e) => setVehicleModel(e.target.value)} style={{ width: "100%" }} icon="commute" label="Model" />
                                 </div>
                                 <div style={{ width: props.device == "MOBILE" ? "100%" : "49%" }}>
-                                    <C_DatePicker style={{ width: "100%" }}  value={vehicleDate} onChange={(date) => setVehicleDate(date)} icon="date_range" format="yyyy" openTo={"year"} views={["year"]} disableFuture={true} label="Ano"/>
+                                    <C_DatePicker style={{ width: "100%" }}  value={vehicleDate} onChange={(date) => setVehicleDate(date)} icon="date_range" format="yyyy" openTo={"year"} views={["year"]} disableFuture={true} label="Year"/>
                                 </div>
                             </div>
 
                             {vehicleType != "Bicicleta" ? 
                                 <div className={classes.wrapFields} style={{ display: props.device == "MOBILE" ? "block" : "flex" }}>
                                     <div style={{ width: props.device == "MOBILE" ? "100%" : "49%", marginRight: props.device == "MOBILE" ? undefined : "2%", marginBottom: props.device == "MOBILE" ? "20px" : undefined }}>
-                                        <C_TextField value={vehicleLicensePlate} onChange={(e) => setVehicleLicensePlate(e.target.value)} style={{ width: "100%" }} icon="assignment" label="Placa" />
+                                        <C_TextField value={vehicleLicensePlate} onChange={(e) => setVehicleLicensePlate(e.target.value)} style={{ width: "100%" }} icon="assignment" label="License plate" />
                                     </div>
                                     <div style={{ width: props.device == "MOBILE" ? "100%" : "49%" }}>
                                         <C_TextFieldKilometragem value={vehicleKilometragem} onChange={(e) => setVehicleKilometragem(e.target.value)} icon="speed" style={{ width: "100%" }} />
