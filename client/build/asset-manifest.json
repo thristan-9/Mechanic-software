@@ -1,0 +1,21 @@
+{
+  "files": {
+    "main.css": "/Mechanic-software/static/css/main.2658f27d.chunk.css",
+    "main.js": "/Mechanic-software/static/js/main.9eaff274.chunk.js",
+    "main.js.map": "/Mechanic-software/static/js/main.9eaff274.chunk.js.map",
+    "runtime-main.js": "/Mechanic-software/static/js/runtime-main.b1c48cd1.js",
+    "runtime-main.js.map": "/Mechanic-software/static/js/runtime-main.b1c48cd1.js.map",
+    "static/js/2.b76f512e.chunk.js": "/Mechanic-software/static/js/2.b76f512e.chunk.js",
+    "static/js/2.b76f512e.chunk.js.map": "/Mechanic-software/static/js/2.b76f512e.chunk.js.map",
+    "index.html": "/Mechanic-software/index.html",
+    "static/css/main.2658f27d.chunk.css.map": "/Mechanic-software/static/css/main.2658f27d.chunk.css.map",
+    "static/js/2.b76f512e.chunk.js.LICENSE.txt": "/Mechanic-software/static/js/2.b76f512e.chunk.js.LICENSE.txt",
+    "static/media/App.css": "/Mechanic-software/static/media/back3.d138e93d.jpg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.b1c48cd1.js",
+    "static/js/2.b76f512e.chunk.js",
+    "static/css/main.2658f27d.chunk.css",
+    "static/js/main.9eaff274.chunk.js"
+  ]
+}
